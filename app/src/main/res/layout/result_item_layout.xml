@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listLayout"
+    android:paddingTop="@dimen/list_padding"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/imgThumb"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:paddingRight="@dimen/image_padding"
+        android:paddingLeft="@dimen/image_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="308dp"
+        android:layout_height="19dp"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textSize="@dimen/header"
+        app:layout_constraintStart_toEndOf="@+id/imgThumb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtResource"
+        android:layout_width="308dp"
+        android:layout_height="80dp"
+        android:text="Description"
+        android:textStyle="normal"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textSize="@dimen/text"
+        app:layout_constraintStart_toEndOf="@+id/imgThumb"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

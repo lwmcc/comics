@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/imgCharacter"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:paddingBottom="@dimen/text_padding_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:paddingBottom="@dimen/text_padding_bottom"
+        android:paddingRight="@dimen/text_padding_side"
+        android:paddingLeft="@dimen/text_padding_side"
+        android:textStyle="bold"
+        android:textSize="@dimen/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCharacter" />
+
+    <TextView
+        android:id="@+id/txtResource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:paddingBottom="@dimen/text_padding_bottom"
+        android:paddingRight="@dimen/text_padding_side"
+        android:paddingLeft="@dimen/text_padding_side"
+        android:textStyle="normal"
+        android:textSize="@dimen/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <TextView
+        android:id="@+id/txtSeries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:paddingRight="@dimen/text_padding_side"
+        android:paddingLeft="@dimen/text_padding_side"
+        android:textStyle="normal"
+        android:textSize="@dimen/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResource" />
+</androidx.constraintlayout.widget.ConstraintLayout>
