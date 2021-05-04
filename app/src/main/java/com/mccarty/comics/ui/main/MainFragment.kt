@@ -120,7 +120,9 @@ class MainFragment : Fragment() {
         btnResetList.setOnClickListener {
             showHideProgress(true)
             if(hasInternet()) {
-                viewModel.getAllComicCharactersRemote()
+                val apikey = requireContext().resources.getString(R.string.apikey)
+                val privateKey = requireContext().resources.getString(R.string.private_key)
+                viewModel.getAllComicCharactersRemote(apikey, privateKey)
             }
             resultsList.clear()
             adapter.notifyDataSetChanged()
@@ -142,7 +144,9 @@ class MainFragment : Fragment() {
     private fun getRemoteListOfCharacters() {
         when(Utils.networkIsAvailable(requireContext())) {
             true -> {
-                viewModel.getAllComicCharactersRemote()
+                val apikey = requireContext().resources.getString(R.string.apikey)
+                val privateKey = requireContext().resources.getString(R.string.private_key)
+                viewModel.getAllComicCharactersRemote(apikey, privateKey)
             }
             false -> {
                 Toast.makeText(requireContext(), requireContext().getString(R.string.no_internet), Toast.LENGTH_LONG).show()

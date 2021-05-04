@@ -50,11 +50,10 @@ class MainViewModel @ViewModelInject constructor(
         }
     }
 
-    fun getAllComicCharactersRemote() {
+    fun getAllComicCharactersRemote(apikey: String, privateKey: String) {
         val retro = retrofit.create(ComicCharacterService::class.java)
         val ts = System.currentTimeMillis().toString()
-        val apikey = "a6d8024a31ed0aa9b99605b110d1d0bf"
-        val hash = Utils.hashString(ts, "509a434bbc15abc53e38e6e813cb441edd97e9c1", "a6d8024a31ed0aa9b99605b110d1d0bf")
+        val hash = Utils.hashString(ts, privateKey, apikey)
 
         viewModelScope.launch(Dispatchers.IO) {
             val response = retro.searchAllCharacters(ts, apikey, hash, 100)
